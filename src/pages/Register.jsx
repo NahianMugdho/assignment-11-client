@@ -1,8 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import regxAnim from '../assets/Animation.json'
 import Lottie from 'lottie-react';
+import AuthContext from '../context/AuthContext';
 
 const Register = () => {
+  const {createUser}=useContext(AuthContext)
+
+    const handleRegister = e => {
+        e.preventDefault();
+        const formData = e.target;
+        const name = formData.name.value;
+        const email = formData.email.value;
+        const password = formData.password.value;
+        const photoURL = formData.photoURL.value;
+        createUser(email,password)
+        .then((userCredential) => {
+          // Signed up 
+          const user = userCredential.user;
+          console.log(user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorMessage);
+          // ..
+        });
+        
+    }
     return (
         <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
@@ -13,7 +38,7 @@ const Register = () => {
             </p>
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form className="card-body" >
+            <form className="card-body" onSubmit={handleRegister}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
