@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import regxAnim from '../assets/Animation.json'
 import Lottie from 'lottie-react';
 import AuthContext from '../context/AuthContext';
+import GoogleSign from './../shared/GoogleSign';
 
 const Register = () => {
   const {createUser}=useContext(AuthContext)
@@ -90,6 +91,7 @@ const Register = () => {
                 <button className="btn btn-primary">Register</button>
               </div>
             </form>
+            <div className='border-b-2 border-t-2'> <GoogleSign></GoogleSign></div>
           </div>
         </div>
       </div>

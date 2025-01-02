@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import AuthContext from '../context/AuthContext';
+import GoogleSign from './../shared/GoogleSign';
 
 const Login = () => {
   const {loginUser}=useContext(AuthContext)
@@ -54,6 +55,7 @@ const Login = () => {
           <button className="btn btn-primary">Login</button>
         </div>
       </form>
+      <div className='border-b-2 border-t-2'> <GoogleSign></GoogleSign></div>
     </div>
   </div>
 </div>
