@@ -1,9 +1,13 @@
 import React, { useContext } from 'react';
 import AuthContext from '../context/AuthContext';
 import GoogleSign from './../shared/GoogleSign';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const {loginUser}=useContext(AuthContext)
+  const location = useLocation();
+  const navigate= useNavigate();
+  const from =location.state|| '/';
   const handleLogIn = e => {
     e.preventDefault();
     const form = e.target;
@@ -14,6 +18,7 @@ const Login = () => {
       // Signed in 
       const user = userCredential.user;
       console.log('log in',user);
+      navigate(from);
       // ...
     })
     .catch((error) => {

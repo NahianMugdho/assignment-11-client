@@ -6,6 +6,9 @@ import MailLayout from "../layout/MailLayout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Queries from "../pages/Queries";
+import PrivateRoute from "./PrivateRoute";
+import AddQueries from './../pages/AddQueries';
 
 
   const router = createBrowserRouter([
@@ -27,6 +30,16 @@ import Register from "../pages/Register";
           element:<Register></Register>,
 
         },
+        {
+          path: 'queries',
+          element:<Queries></Queries>,
+
+        },
+        {
+          path: 'queries/addqueries',
+          element:<PrivateRoute><AddQueries></AddQueries> </PrivateRoute>,
+
+        }
       ]
     },
   ]);
