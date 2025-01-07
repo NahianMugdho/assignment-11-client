@@ -10,6 +10,8 @@ import Queries from "../pages/Queries";
 import PrivateRoute from "./PrivateRoute";
 import AddQueries from './../pages/AddQueries';
 import QueryDetails from './../pages/QueryDetails';
+import MyRec from "../pages/MyRec";
+import MyQueries from "../pages/MyQueries";
 
 
   const router = createBrowserRouter([
@@ -44,7 +46,19 @@ import QueryDetails from './../pages/QueryDetails';
         {
           path: '/querydetails/:id',
           element:<PrivateRoute><QueryDetails></QueryDetails> </PrivateRoute>,
-        }
+        },
+        {
+          
+            path: '/myrec',
+            element:<MyRec></MyRec>,
+          
+        },
+        {
+          
+          path: '/myqueries',
+          element:<MyQueries></MyQueries>,
+        
+      },
       ]
     },
   ]);

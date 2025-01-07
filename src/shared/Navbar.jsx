@@ -26,10 +26,37 @@ const Navbar = () => {
     const links = <>
      <li><Link to='/'><a>Home</a></Link></li>
         <li >
-        <Link to='queries'><a>Queries</a> </Link>
+        <Link to='queries'><a>All Queries</a> </Link>
           
          
         </li>
+
+        <li>
+
+{
+  user? <button> <Link to='myqueries'> My Queries</Link></button> : <></>
+}
+
+
+
+
+
+</li>
+
+
+
+
+        <li>
+
+{
+  user? <button> <Link to='myrec'> My Recommendations</Link></button> : <></>
+}
+
+
+
+
+
+</li>
       
         <li>
 
@@ -42,6 +69,7 @@ const Navbar = () => {
 
 
         </li>
+ 
     
     </>
     return (
