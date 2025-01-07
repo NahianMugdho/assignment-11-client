@@ -3,6 +3,7 @@ import regxAnim from '../assets/Animation.json'
 import Lottie from 'lottie-react';
 import AuthContext from '../context/AuthContext';
 import GoogleSign from './../shared/GoogleSign';
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const {createUser}=useContext(AuthContext)
@@ -19,8 +20,16 @@ const Register = () => {
           // Signed up 
           const user = userCredential.user;
           console.log(user);
+          return updateProfile(user, {
+            displayName: name,
+            photoURL: photoURL
+        });
           // ...
         })
+        .then(() => {
+          console.log("User profile updated successfully");
+          alert("Registration Successful!");
+      })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;

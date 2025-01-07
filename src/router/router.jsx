@@ -9,6 +9,7 @@ import Register from "../pages/Register";
 import Queries from "../pages/Queries";
 import PrivateRoute from "./PrivateRoute";
 import AddQueries from './../pages/AddQueries';
+import QueryDetails from './../pages/QueryDetails';
 
 
   const router = createBrowserRouter([
@@ -39,6 +40,10 @@ import AddQueries from './../pages/AddQueries';
           path: 'queries/addqueries',
           element:<PrivateRoute><AddQueries></AddQueries> </PrivateRoute>,
 
+        },
+        {
+          path: '/querydetails/:id',
+          element:<PrivateRoute><QueryDetails></QueryDetails> </PrivateRoute>,
         }
       ]
     },
