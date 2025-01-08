@@ -95,7 +95,18 @@ const MyQueries = () => {
                                 <td className="border p-2">
                                     <img src={query.productImage} alt={query.productName} className="w-16 h-16 mx-auto" />
                                 </td>
-                                <td className="border p-2">{query.timestamp}</td>
+                                {/* <td className="border p-2">{query.timestamp}</td> */}
+                                <td className="border p-2">
+    {new Date(query.timestamp).toLocaleString('en-US', {
+        timeZone: 'Asia/Dhaka', // ✅ Converts to BD Time (BST)
+        year: 'numeric',
+        month: 'short',  // ✅ "Jan", "Feb", etc.
+        day: '2-digit',   // ✅ "07", "15", etc.
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,     // ✅ 12-hour format with AM/PM
+    }).replace(',', ' -')} {/* ✅ Replaces comma with a dash for better readability */}
+</td>
                                 <td className="border p-2">
                                     <button 
                                         onClick={() => handleDelete(query._id)} 
