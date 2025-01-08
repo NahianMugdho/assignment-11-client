@@ -7,8 +7,8 @@ const Card = ({prod}) => {
         <div>
             <div className="card bg-base-100 w-96 shadow-xl">
   <figure>
-    <img
-      src = {productImage}
+    <img className='w-40 h-40 object-cover mx-auto'
+      src = {productImage} 
       alt="Shoes" />
   </figure>
   <div className="card-body">
