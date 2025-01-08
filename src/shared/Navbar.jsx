@@ -58,10 +58,10 @@ const Navbar = () => {
 
 </li>
       
-        <li>
+        <li >
 
           {
-            user? <button onClick={handleLogOut}> Log OUT</button> : <Link to='login'><a>Log In</a></Link>
+            user? <button  onClick={handleLogOut} className="btn btn-outline btn-primary "> Log OUT</button> : <Link to='login'><a>Log In</a></Link>
           }
 
 
@@ -96,7 +96,14 @@ const Navbar = () => {
        {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <div className="btn btn-ghost text-xl flex items-center space-x-2">
+  {/* Logo */}
+  <img src="https://i.ibb.co/dgY6rcV/computer.png" alt="PRS Logo" className="w-8 h-8" />
+
+  {/* Brand Name */}
+  <p>PRS</p>
+</div>
+
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

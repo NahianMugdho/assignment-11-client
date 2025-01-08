@@ -47,7 +47,10 @@ const Footer = () => {
           </div>
         </nav>
         <aside>
-          <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+          <div className='flex items-center space-x-2'>
+          <p>Copyright © {new Date().getFullYear()} - All right reserved by PRS Industries Ltd</p>
+          <img src="https://i.ibb.co/dgY6rcV/computer.png" alt="PRS Logo" className="w-8 h-8" />
+          </div>
         </aside>
       </footer>
     );

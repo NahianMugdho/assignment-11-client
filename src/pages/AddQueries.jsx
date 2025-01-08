@@ -42,7 +42,7 @@ const AddQueries = () => {
         const queryData = { ...formData, timestamp: new Date().toISOString() };
 
         try {
-            const response = await fetch('http://localhost:3000/product', {
+            const response = await fetch('https://prs-server-sigma.vercel.app/product', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

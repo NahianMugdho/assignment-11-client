@@ -8,7 +8,7 @@ const MyRec = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:3000/recommendation?email=${user.email}`) // ✅ Send user email as query param
+            fetch(`https://prs-server-sigma.vercel.app/recommendation?email=${user.email}`) // ✅ Send user email as query param
                 .then(res => res.json())
                 .then(data => {
                     if (Array.isArray(data)) { // ✅ Ensure we only filter if data is an array

@@ -17,7 +17,7 @@ const QueryDetails = () => {
 
     // ✅ Fetch query details
     useEffect(() => {
-        fetch(`http://localhost:3000/product/${id}`)
+        fetch(`https://prs-server-sigma.vercel.app/product/${id}`)
             .then(res => res.json())
             .then(data => setQuery(data))
             .catch(error => console.error('Error fetching query:', error));
@@ -26,7 +26,7 @@ const QueryDetails = () => {
     // ✅ Fetch all recommendations for this query
     useEffect(() => {
         console.log("Fetching recommendations for queryId:", id); // Debugging log
-        fetch(`http://localhost:3000/recommendation?queryId=${id}`)
+        fetch(`https://prs-server-sigma.vercel.app/recommendation?queryId=${id}`)
             .then(res => res.json())
             .then(data =>{
                 console.log("Received recommendations:", data);
@@ -55,7 +55,7 @@ const QueryDetails = () => {
         };
 
         try {
-            const response = await fetch('http://localhost:3000/recommendation', {
+            const response = await fetch('https://prs-server-sigma.vercel.app/recommendation', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import AuthContext from '../context/AuthContext';
+import { FcGoogle } from "react-icons/fc";
 
 const GoogleSign = () => {
     const {googleSign} = useContext(AuthContext)
@@ -29,7 +30,9 @@ const GoogleSign = () => {
 
     return (
         <div>
-            <button onClick={handlegoogleSign}> Google Sign In</button>
+            <button onClick={handlegoogleSign} className="btn btn-outline btn-secondary btn-wide text-center">Sign In with <FcGoogle /></button>
+            
+            
         </div>
     );
 };

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import AuthContext from '../context/AuthContext';
 import GoogleSign from './../shared/GoogleSign';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { FaArrowUp } from "react-icons/fa";
 
 const Login = () => {
   const {loginUser}=useContext(AuthContext)
@@ -30,14 +31,15 @@ const Login = () => {
   }
 
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero bg-base-200 min-h-screen ">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
-      <h1 className="text-5xl font-bold">Login now!</h1>
-      <p className="py-6">
-        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-        quasi. In deleniti eaque aut repudiandae et a id nisi.
-      </p>
+      <div><h1 className="text-5xl font-bold flex items-center gap-2">Login now! </h1>
+  
+      </div>
+      
+    
+      <img src="https://i.ibb.co.com/dgY6rcV/computer.png" alt="" />
     </div>
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
       <form className="card-body" onSubmit={handleLogIn}>
@@ -56,11 +58,13 @@ const Login = () => {
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
         </div>
-        <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+        <div className="form-control mt-6 flex flex-col items-center">
+          <button className="btn btn-primary w-full max-w-xs">Login</button>
+          <div className='my-2 items-center  '> <GoogleSign></GoogleSign></div>
         </div>
+       
       </form>
-      <div className='border-b-2 border-t-2'> <GoogleSign></GoogleSign></div>
+     
     </div>
   </div>
 </div>
