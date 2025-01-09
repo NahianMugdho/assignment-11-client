@@ -29,6 +29,7 @@ const Register = () => {
         .then(() => {
           console.log("User profile updated successfully");
           alert("Registration Successful!");
+          navigate('/'); // Redirect to home
       })
         .catch((error) => {
           const errorCode = error.code;
@@ -96,11 +97,12 @@ const Register = () => {
                   className="input input-bordered" 
                 />
               </div>
-              <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
+              <div className="form-control mt-6 flex flex-col items-center">
+                <button className="btn btn-primary btn-wide">Register</button>
+                <div className='my-3'> <GoogleSign></GoogleSign></div>
               </div>
             </form>
-            <div className='border-b-2 border-t-2'> <GoogleSign></GoogleSign></div>
+            
           </div>
         </div>
       </div>

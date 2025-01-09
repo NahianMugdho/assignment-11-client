@@ -105,17 +105,40 @@ const Navbar = () => {
 </div>
 
   </div>
+
+
+
+
+  
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
     {links}
     </ul>
   </div>
-  <div className="navbar-end">
+  <div className="navbar-end gap-5">
+   
+   {/* <div className="w-10 rounded-full">
+          <img
+            alt="Tailwind CSS Navbar component"
+            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+        </div>
 
   {
             user? <> </>: <Link to='register'><a className="btn">Register</a></Link>
-          }
-
+          } */}
+  {user ? (
+    <div className="w-10 h-10 rounded-full overflow-hidden border">
+      <img
+        alt="User Profile"
+        src={user.photoURL || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"} // Show user's photo if available, otherwise default logo
+        className="w-full h-full object-cover"
+      />
+    </div>
+  ) : (
+    <Link to="register">
+      <a className="btn">Register</a>
+    </Link>
+  )}
 
     {/* <Link to='register'><a className="btn">Register</a></Link> */}
   </div>

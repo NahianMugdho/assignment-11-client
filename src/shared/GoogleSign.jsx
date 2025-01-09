@@ -1,10 +1,15 @@
 import React, { useContext } from 'react';
 import AuthContext from '../context/AuthContext';
 import { FcGoogle } from "react-icons/fc";
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const GoogleSign = () => {
     const {googleSign} = useContext(AuthContext)
+    const location = useLocation();
+    const navigate= useNavigate();
+    const from =location.state|| '/';
     const handlegoogleSign = () =>{
+      
         googleSign()
         .then((result) => {
             // This gives you a Google Access Token. You can use it to access the Google API.
@@ -12,6 +17,7 @@ const GoogleSign = () => {
             const token = credential.accessToken;
             // The signed-in user info.
             const user = result.user;
+            navigate(from);
             // IdP data available using getAdditionalUserInfo(result)
             // ...
           }).catch((error) => {
