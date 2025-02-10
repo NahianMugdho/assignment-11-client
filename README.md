@@ -8,7 +8,7 @@ server link: https://prs-server-sigma.vercel.app -->
 A Product Recommendation System built with React, Vite, Node.js, Express.js, and MongoDB.
 
 ## 🔗 Live Links
-- **Client:** [PRS Industries Ltd](https://assignment-10-567a8.web.app)
+- **Client:** [PRS Industries Ltd](https://auth-mohamilon-e1008.web.app)
 - **Server:** [PRS Server](https://prs-server-sigma.vercel.app)
 
 ## 🎯 Purpose
