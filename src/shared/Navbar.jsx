@@ -24,7 +24,7 @@ const Navbar = () => {
 
 
     const links = <>
-     <li><Link to='/'><a>Home</a></Link></li>
+     <li ><Link to='/'><a>Home</a></Link></li>
         <li >
         <Link to='queries'><a>All Queries</a> </Link>
           
@@ -34,7 +34,7 @@ const Navbar = () => {
         <li>
 
 {
-  user? <button> <Link to='myqueries'> My Queries</Link></button> : <></>
+  user? <button> <Link to='myqueries'> My Queries</Link></button> :<button className='hidden'>  <Link to='myqueries'> My Queries</Link></button>
 }
 
 
@@ -49,7 +49,7 @@ const Navbar = () => {
         <li>
 
 {
-  user? <button> <Link to='myrec'> My Recommendations</Link></button> : <></>
+  user? <button> <Link to='myrec'> My Recommendations</Link></button> : <button className='hidden'> <Link to='myrec'> My Recommendations</Link></button>
 }
 
 
@@ -61,7 +61,7 @@ const Navbar = () => {
         <li >
 
           {
-            user? <button  onClick={handleLogOut} className="btn btn-outline btn-primary "> Log OUT</button> : <Link to='login'><a>Log In</a></Link>
+            user? <button  onClick={handleLogOut} className="   "> Log Out</button> :<button className="  "> <Link to='login'>Log In</Link></button>
           }
 
 
@@ -115,7 +115,7 @@ const Navbar = () => {
     {links}
     </ul>
   </div>
-  <div className="navbar-end gap-5">
+  <div className="navbar-end flex items-center gap-5">
    
    {/* <div className="w-10 rounded-full">
           <img
