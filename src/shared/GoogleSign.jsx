@@ -17,7 +17,7 @@ const GoogleSign = () => {
             const token = credential.accessToken;
             // The signed-in user info.
             const user = result.user;
-            navigate(from);
+            navigate('/');
             // IdP data available using getAdditionalUserInfo(result)
             // ...
           }).catch((error) => {

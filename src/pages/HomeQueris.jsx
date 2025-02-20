@@ -15,6 +15,8 @@ const HomeQueris = () => {
     },[])
     return (
         <div>
+           
+            <div className=' w-11/12 text-4xl font-bold text-center mx-auto my-2 '> Our Featured Products</div>
             <div className='w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5'>
             {
     prods.slice(0, 6).map(prod => <Card key={prod._id} prod={prod} />)

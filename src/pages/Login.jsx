@@ -19,7 +19,7 @@ const Login = () => {
       // Signed in 
       const user = userCredential.user;
       console.log('log in',user);
-      navigate(from);
+      navigate('/');
       // ...
     })
     .catch((error) => {
